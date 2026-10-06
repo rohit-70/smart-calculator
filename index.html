@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="calculator">
+
+        <!-- Top Bar -->
+
+        <div class="top-bar">
+
+            <h1>Smart Calculator</h1>
+
+            <button id="themeBtn">
+                🌙
+            </button>
+
+        </div>
+
+
+        <!-- Display -->
+
+        <div class="display">
+
+            <div id="history"></div>
+
+            <div id="display">
+                0
+            </div>
+
+        </div>
+
+
+        <!-- Memory -->
+
+        <div class="memory-buttons">
+
+            <button data-memory="MC">MC</button>
+
+            <button data-memory="MR">MR</button>
+
+            <button data-memory="M+">M+</button>
+
+            <button data-memory="M-">M-</button>
+
+        </div>
+
+
+        <!-- Scientific Buttons -->
+
+        <div class="scientific-buttons">
+
+            <button data-value="sin(">sin</button>
+
+            <button data-value="cos(">cos</button>
+
+            <button data-value="tan(">tan</button>
+
+            <button data-value="sqrt(">√</button>
+
+            <button data-value="log(">log</button>
+
+            <button data-value="ln(">ln</button>
+
+            <button data-value="π">π</button>
+
+            <button data-value="e">e</button>
+
+            <button data-value="^2">x²</button>
+
+            <button data-value="^">xʸ</button>
+
+            <button data-value="!">x!</button>
+
+            <button data-value="1/">1/x</button>
+
+        </div>
+
+
+        <!-- Calculator Buttons -->
+
+        <div class="buttons">
+
+            <button
+                class="action"
+                data-action="clear"
+            >
+                AC
+            </button>
+
+            <button
+                class="action"
+                data-action="delete"
+            >
+                DEL
+            </button>
+
+            <button data-value="%">
+                %
+            </button>
+
+            <button
+                class="operator"
+                data-value="/"
+            >
+                ÷
+            </button>
+
+
+            <button data-value="7">
+                7
+            </button>
+
+            <button data-value="8">
+                8
+            </button>
+
+            <button data-value="9">
+                9
+            </button>
+
+            <button
+                class="operator"
+                data-value="*"
+            >
+                ×
+            </button>
+
+
+            <button data-value="4">
+                4
+            </button>
+
+            <button data-value="5">
+                5
+            </button>
+
+            <button data-value="6">
+                6
+            </button>
+
+            <button
+                class="operator"
+                data-value="-"
+            >
+                −
+            </button>
+
+
+            <button data-value="1">
+                1
+            </button>
+
+            <button data-value="2">
+                2
+            </button>
+
+            <button data-value="3">
+                3
+            </button>
+
+            <button
+                class="operator"
+                data-value="+"
+            >
+                +
+            </button>
+
+
+            <button data-value="(">
+                (
+            </button>
+
+            <button data-value="0">
+                0
+            </button>
+
+            <button data-value=".">
+                .
+            </button>
+
+            <button
+                class="equals"
+                data-action="calculate"
+            >
+                =
+            </button>
+
+        </div>
+
+
+        <!-- History -->
+
+        <div class="history-section">
+
+            <div class="history-header">
+
+                <h2>History</h2>
+
+                <button id="clearHistory">
+                    Clear
+                </button>
+
+            </div>
+
+
+            <div id="historyList">
+                No calculations yet
+            </div>
+
+        </div>
+
+
+        <!-- Smart Tools -->
+
+        <div class="smart-tools">
+
+            <h2>Smart Tools</h2>
+
+
+            <div class="tool-buttons">
+
+                <button data-tool="bmi">
+                    BMI
+                </button>
+
+                <button data-tool="emi">
+                    EMI
+                </button>
+
+                <button data-tool="age">
+                    Age
+                </button>
+
+                <button data-tool="converter">
+                    Convert
+                </button>
+
+            </div>
+
+
+            <!-- BMI -->
+
+            <div
+                class="tool-box"
+                id="bmiTool"
+            >
+
+                <h3>BMI Calculator</h3>
+
+                <input
+                    type="number"
+                    id="bmiWeight"
+                    placeholder="Weight (kg)"
+                >
+
+                <input
+                    type="number"
+                    id="bmiHeight"
+                    placeholder="Height (cm)"
+                >
+
+                <button id="calculateBMI">
+                    Calculate BMI
+                </button>
+
+                <p id="bmiResult"></p>
+
+            </div>
+
+
+            <!-- EMI -->
+
+            <div
+                class="tool-box"
+                id="emiTool"
+            >
+
+                <h3>EMI Calculator</h3>
+
+                <input
+                    type="number"
+                    id="loanAmount"
+                    placeholder="Loan Amount (₹)"
+                >
+
+                <input
+                    type="number"
+                    id="interestRate"
+                    placeholder="Interest Rate (%)"
+                >
+
+                <input
+                    type="number"
+                    id="loanYears"
+                    placeholder="Loan Period (Years)"
+                >
+
+                <button id="calculateEMI">
+                    Calculate EMI
+                </button>
+
+                <p id="emiResult"></p>
+
+            </div>
+
+
+            <!-- Age -->
+
+            <div
+                class="tool-box"
+                id="ageTool"
+            >
+
+                <h3>Age Calculator</h3>
+
+                <input
+                    type="date"
+                    id="birthDate"
+                >
+
+                <button id="calculateAge">
+                    Calculate Age
+                </button>
+
+                <p id="ageResult"></p>
+
+            </div>
+
+
+            <!-- Converter -->
+
+            <div
+                class="tool-box"
+                id="converterTool"
+            >
+
+                <h3>Length Converter</h3>
+
+                <input
+                    type="number"
+                    id="convertValue"
+                    placeholder="Enter value"
+                >
+
+
+                <select id="fromUnit">
+
+                    <option value="meter">
+                        Meter
+                    </option>
+
+                    <option value="km">
+                        Kilometer
+                    </option>
+
+                    <option value="cm">
+                        Centimeter
+                    </option>
+
+                    <option value="feet">
+                        Feet
+                    </option>
+
+                    <option value="inch">
+                        Inch
+                    </option>
+
+                </select>
+
+
+                <select id="toUnit">
+
+                    <option value="meter">
+                        Meter
+                    </option>
+
+                    <option value="km">
+                        Kilometer
+                    </option>
+
+                    <option value="cm">
+                        Centimeter
+                    </option>
+
+                    <option value="feet">
+                        Feet
+                    </option>
+
+                    <option value="inch">
+                        Inch
+                    </option>
+
+                </select>
+
+
+                <button id="convertLength">
+                    Convert
+                </button>
+
+                <p id="converterResult"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,671 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #eef2ff,
+            #f8fafc
+        );
+
+    transition: 0.3s;
+}
+
+
+/* Calculator */
+
+.calculator {
+
+    width: 430px;
+
+    max-width: 100%;
+
+    padding: 22px;
+
+    border-radius: 28px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    box-shadow:
+        0 25px 60px
+        rgba(15, 23, 42, 0.15);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* Top Bar */
+
+.top-bar {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+
+.top-bar h1 {
+
+    font-size: 23px;
+
+    color: #111827;
+}
+
+
+#themeBtn {
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #eef2ff;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+
+/* Display */
+
+.display {
+
+    background: #111827;
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    min-height: 115px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-end;
+
+    text-align: right;
+
+    overflow: hidden;
+}
+
+
+#history {
+
+    min-height: 22px;
+
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+
+#display {
+
+    margin-top: 7px;
+
+    font-size: 36px;
+
+    font-weight: 600;
+
+    word-break: break-all;
+}
+
+
+/* Memory */
+
+.memory-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+
+    margin:
+        14px 0 10px;
+}
+
+
+.memory-buttons button {
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e2e8f0;
+
+    color: #334155;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* Scientific */
+
+.scientific-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 7px;
+
+    margin-bottom: 12px;
+}
+
+
+.scientific-buttons button {
+
+    height: 38px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #eef2f7;
+
+    color: #334155;
+
+    cursor: pointer;
+}
+
+
+/* Main Buttons */
+
+.buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+
+.buttons button {
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #f1f5f9;
+
+    color: #111827;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+
+
+.buttons button:hover,
+.memory-buttons button:hover,
+.scientific-buttons button:hover,
+.tool-buttons button:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+.buttons button:active,
+.memory-buttons button:active,
+.scientific-buttons button:active,
+.tool-buttons button:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* Operators */
+
+.operator {
+
+    background:
+        #dbeafe !important;
+
+    color:
+        #1d4ed8 !important;
+
+    font-weight: bold;
+}
+
+
+.action {
+
+    background:
+        #fee2e2 !important;
+
+    color:
+        #dc2626 !important;
+
+    font-weight: bold;
+}
+
+
+.equals {
+
+    background:
+        #2563eb !important;
+
+    color: white !important;
+
+    font-weight: bold;
+}
+
+
+/* History */
+
+.history-section {
+
+    margin-top: 22px;
+}
+
+
+.history-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.history-header h2 {
+
+    font-size: 18px;
+
+    color: #111827;
+}
+
+
+#clearHistory {
+
+    border: none;
+
+    background: transparent;
+
+    color: #2563eb;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+#historyList {
+
+    margin-top: 10px;
+
+    max-height: 150px;
+
+    overflow-y: auto;
+
+    font-size: 14px;
+}
+
+
+.history-item {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 11px;
+
+    margin-bottom: 7px;
+
+    border-radius: 10px;
+
+    background: #f1f5f9;
+}
+
+
+.history-item span {
+
+    color: #64748b;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.history-item strong {
+
+    color: #111827;
+}
+
+
+/* Smart Tools */
+
+.smart-tools {
+
+    margin-top: 22px;
+}
+
+
+.smart-tools h2 {
+
+    font-size: 18px;
+
+    margin-bottom: 12px;
+
+    color: #111827;
+}
+
+
+.tool-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 8px;
+}
+
+
+.tool-buttons button {
+
+    padding: 11px 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e0e7ff;
+
+    color: #3730a3;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.15s;
+}
+
+
+/* Tool Box */
+
+.tool-box {
+
+    display: none;
+
+    margin-top: 12px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: #f1f5f9;
+}
+
+
+.tool-box.active {
+
+    display: block;
+}
+
+
+.tool-box h3 {
+
+    margin-bottom: 12px;
+
+    font-size: 16px;
+}
+
+
+.tool-box input,
+.tool-box select {
+
+    width: 100%;
+
+    padding: 11px;
+
+    margin-bottom: 8px;
+
+    border:
+        1px solid #cbd5e1;
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: white;
+}
+
+
+.tool-box button {
+
+    width: 100%;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+}
+
+
+.tool-box p {
+
+    margin-top: 12px;
+
+    font-weight: 600;
+
+    color: #111827;
+}
+
+
+/* Dark Mode */
+
+body.dark {
+
+    background:
+        linear-gradient(
+            135deg,
+            #020617,
+            #0f172a,
+            #111827
+        );
+}
+
+
+body.dark .calculator {
+
+    background:
+        rgba(30, 41, 59, 0.95);
+}
+
+
+body.dark .top-bar h1,
+body.dark .history-header h2,
+body.dark .smart-tools h2 {
+
+    color: white;
+}
+
+
+body.dark #themeBtn {
+
+    background: #334155;
+}
+
+
+body.dark .memory-buttons button,
+body.dark .scientific-buttons button,
+body.dark .buttons button {
+
+    background: #334155;
+
+    color: white;
+}
+
+
+body.dark .operator {
+
+    background:
+        #1e3a8a !important;
+
+    color:
+        #bfdbfe !important;
+}
+
+
+body.dark .action {
+
+    background:
+        #7f1d1d !important;
+
+    color:
+        #fecaca !important;
+}
+
+
+body.dark .history-item {
+
+    background: #334155;
+}
+
+
+body.dark .history-item span {
+
+    color: #cbd5e1;
+}
+
+
+body.dark .history-item strong {
+
+    color: white;
+}
+
+
+body.dark .tool-buttons button {
+
+    background: #312e81;
+
+    color: #e0e7ff;
+}
+
+
+body.dark .tool-box {
+
+    background: #334155;
+}
+
+
+body.dark .tool-box input,
+body.dark .tool-box select {
+
+    background: #1e293b;
+
+    color: white;
+
+    border-color: #475569;
+}
+
+
+body.dark .tool-box p {
+
+    color: white;
+}
+
+
+/* Mobile */
+
+@media (max-width: 450px) {
+
+    body {
+
+        padding: 10px;
+    }
+
+
+    .calculator {
+
+        padding: 15px;
+
+        border-radius: 22px;
+    }
+
+
+    #display {
+
+        font-size: 29px;
+    }
+
+
+    .buttons {
+
+        gap: 7px;
+    }
+
+
+    .buttons button {
+
+        height: 54px;
+    }
+
+
+    .scientific-buttons {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
