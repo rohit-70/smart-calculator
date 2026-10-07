@@ -17,6 +17,8 @@ It supports basic calculations, scientific operations, memory functions, calcula
 
 The Smart Calculator provides a clean and responsive interface for performing everyday and scientific calculations.
 
+![Smart Calculator Preview](calculator-preview.png)
+
 👉 **Try it live:**  
 https://smart-calculator-gamma-seven.vercel.app/
 
@@ -58,11 +60,3 @@ https://smart-calculator-gamma-seven.vercel.app/
 
 ## 📂 Project Structure
 
-```text
-smart-calculator/
-│
-├── index.html
-├── style.css
-├── script.js
-├── favicon.svg
-└── README.md
