@@ -25,10 +25,40 @@ buttons.forEach(button => {
 
     button.addEventListener("click", () => {
 
-        const value =
-            button.dataset.value;
+        const value = button.dataset.value;
 
-        expression += value;
+        // Smart bracket
+        if (value === "(") {
+
+            const openBrackets =
+                (expression.match(/\(/g) || []).length;
+
+            const closeBrackets =
+                (expression.match(/\)/g) || []).length;
+
+            const lastChar =
+                expression.slice(-1);
+
+            // If an opening bracket is waiting to be closed
+            // and previous character is a number or closing bracket
+            if (
+                openBrackets > closeBrackets &&
+                (/[0-9)]/.test(lastChar))
+            ) {
+
+                expression += ")";
+
+            } else {
+
+                expression += "(";
+
+            }
+
+        } else {
+
+            expression += value;
+
+        }
 
         display.textContent =
             expression;
